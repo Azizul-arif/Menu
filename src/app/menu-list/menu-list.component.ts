@@ -87,4 +87,33 @@ export class MenuListComponent {
 
   ]
 
+  breakfast: any = this.data;
+  lunch: any = this.data;
+  Item: any[] = [...this.data];
+  shakes: any = this.data;
+  All: any = this.data;
+
+  buttonALL() {
+    const allItem = this.Item;
+    console.log('allItem', allItem);
+    this.data = allItem;
+  }
+  breakfastData(category: string) {
+    const breakfastItem = this.Item.filter(m => m.category === 'Breakfast');
+    console.log(breakfastItem);
+    this.data = breakfastItem;
+    //return breakfastItem;
+  }
+
+  lunchData(category: string) {
+    const lunchItem = this.Item.filter(m => m.category === 'Lunch');
+    this.data = lunchItem;
+  }
+
+  shakesData(category: string) {
+    const shakesItem = this.Item.filter(m => m.category === 'Shakes')
+    console.log(shakesItem);
+    this.data = shakesItem;
+  }
+
 }

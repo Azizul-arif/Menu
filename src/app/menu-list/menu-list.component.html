@@ -2,20 +2,32 @@
  <div class="mt-2">
   <h1 class="text-center">Our Menu</h1>
  </div>
+ <div class="d-flex justify-content-center mb-3">
+  <button class="btn btn-warning mx-1 text-white"
+   (click)="buttonALL()">All</button>
+  <button class="btn btn-warning mx-1 text-white"
+   (click)="breakfastData('Breakfast')">Breakfast</button>
+  <button class="btn btn-warning mx-1 text-white"
+   (click)="lunchData('Lunch')">Lunch</button>
+  <button class="btn btn-warning mx-1 text-white"
+   (click)="shakesData('Shakes')">Shakes</button>
+ </div>
 
- <div class="row g-4"> <!-- Add g-4 for gutter spacing -->
-  <div class="col-4 mb-5 bg-white rounded " *ngFor="let item of data">
-   <img src="{{item.image}}" class="image mb-3 shadow">
-   <div class="shadow">
-    <div class="d-flex flex-row justify-content-between  shadow">
-     <h3 class>{{item.name}}</h3>
-     <button class="btn btn-warning btn-sm text-white">${{item.price}}</button>
-    </div>
-    <div class>
-     <p>{{item.description}}</p>
+ <div class="row g-4"> <!-- g-4 for gutter spacing -->
+  <div class="col-4 mb-5" *ngFor="let item of data">
+   <div class="card d-flex">
+    <img src="{{item.image}}" class="card-img-top img-fluid image"
+     alt="{{item.name}}">
+    <div class="card-body">
+     <div class="d-flex flex-row justify-content-between">
+      <h3>{{item.name}}</h3>
+      <button class="btn btn-warning btn-sm text-white">${{item.price}}</button>
+     </div>
+     <div>
+      <p class="text-justify">{{item.description}}</p>
+     </div>
     </div>
    </div>
-
   </div>
  </div>
 </div>
